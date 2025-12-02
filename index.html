@@ -16,6 +16,7 @@
     <meta property="og:url" content="https://benju.fr/omasa/">
     <meta property="og:title" content="Omasa - Your Personal Massage Routine Guide">
     <meta property="og:description" content="Discover guided massage routines for relaxation and well-being. Available on iOS and Android.">
+    <meta property="og:image" content="images/ic_launcher-playstore.png">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary">
@@ -24,14 +25,50 @@
     <meta name="twitter:description" content="Discover guided massage routines for relaxation and well-being.">
     
     <!-- Favicons -->
-    <link rel="icon" type="image/png" href="../images/favicon.png">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/ic_launcher-playstore.png">
+    <link rel="apple-touch-icon" href="images/ic_launcher-playstore.png">
     
     <style>
+        /* Local Quicksand Font */
+        @font-face {
+            font-family: 'Quicksand';
+            src: url('font/quicksand_light.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Quicksand';
+            src: url('font/quicksand_regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Quicksand';
+            src: url('font/quicksand_medium.ttf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Quicksand';
+            src: url('font/quicksand_semibold.ttf') format('truetype');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Quicksand';
+            src: url('font/quicksand_semibold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
         :root {
             --primary-color: #6B4CE6;
             --primary-dark: #5337CC;
@@ -52,7 +89,7 @@
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--white);
@@ -112,9 +149,9 @@
         }
         
         .hero h1 {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Quicksand', sans-serif;
             font-size: 3.5rem;
-            font-weight: 800;
+            font-weight: 700;
             margin-bottom: 1.5rem;
             line-height: 1.2;
             color: var(--white);
@@ -180,7 +217,7 @@
         }
         
         .section-title {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Quicksand', sans-serif;
             font-size: 2.5rem;
             font-weight: 700;
             text-align: center;
@@ -215,9 +252,9 @@
         }
         
         .feature-card h3 {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Quicksand', sans-serif;
             font-size: 1.5rem;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 1rem;
             color: var(--text-dark);
         }
@@ -236,7 +273,7 @@
         }
         
         .download h2 {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Quicksand', sans-serif;
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
@@ -403,6 +440,57 @@
             }
         }
         
+        /* Hero Illustration */
+        .hero-illustration {
+            margin-top: 3rem;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-illustration img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 10px 30px rgba(107, 76, 230, 0.2));
+        }
+        
+        /* Logo with icon */
+        .logo {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-illustration {
+                max-width: 300px;
+            }
+            
+            .logo-icon {
+                width: 32px;
+                height: 32px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-illustration {
+                max-width: 250px;
+                margin-top: 2rem;
+            }
+        }
+        
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -442,7 +530,10 @@
     <header>
         <div class="container">
             <nav>
-                <a href="/omasa/" class="logo">Omasa</a>
+                <a href="/omasa/" class="logo">
+                    <img src="images/ic_launcher-playstore.png" alt="Omasa Logo" class="logo-icon">
+                    Omasa
+                </a>
                 <ul class="nav-links">
                     <li><a href="#features">Features</a></li>
                     <li><a href="#download">Download</a></li>
@@ -462,6 +553,10 @@
                         <span>✨</span>
                         Learn More
                     </a>
+                </div>
+                
+                <div class="hero-illustration fade-in-up">
+                    <img src="images/omasa_hands.png" alt="Relaxing massage hands illustration">
                 </div>
             </div>
         </div>
@@ -566,7 +661,6 @@
             <ul class="footer-links">
                 <li><a href="privacy-policy.html">Privacy Policy</a></li>
                 <li><a href="terms-of-use.html">Terms of Use</a></li>
-                <li><a href="https://github.com/benju69/Omasa" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             </ul>
             <p>&copy; 2025 Omasa. Made with ❤️ by <a href="https://benju.fr" style="color: var(--white); text-decoration: none; opacity: 0.8;">Benjamin Gonin</a></p>
         </div>
