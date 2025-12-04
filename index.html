@@ -581,7 +581,6 @@
         
         .faq-question.active::after {
             content: '−';
-            transform: rotate(180deg);
         }
         
         .faq-answer {
@@ -592,7 +591,7 @@
         }
         
         .faq-answer.active {
-            max-height: 500px;
+            max-height: 1000px;
             padding: 0 2rem 1.5rem 2rem;
         }
         
@@ -847,19 +846,26 @@
             faqQuestions.forEach(question => {
                 question.addEventListener('click', function() {
                     const isActive = this.classList.contains('active');
+                    const faqItem = this.closest('.faq-item');
+                    const answer = faqItem ? faqItem.querySelector('.faq-answer') : null;
                     
                     // Close all other FAQ items
                     faqQuestions.forEach(q => {
+                        const otherFaqItem = q.closest('.faq-item');
+                        const otherAnswer = otherFaqItem ? otherFaqItem.querySelector('.faq-answer') : null;
+                        
                         q.classList.remove('active');
                         q.setAttribute('aria-expanded', 'false');
-                        q.nextElementSibling.classList.remove('active');
+                        if (otherAnswer) {
+                            otherAnswer.classList.remove('active');
+                        }
                     });
                     
                     // Toggle current item
-                    if (!isActive) {
+                    if (!isActive && answer) {
                         this.classList.add('active');
                         this.setAttribute('aria-expanded', 'true');
-                        this.nextElementSibling.classList.add('active');
+                        answer.classList.add('active');
                     }
                 });
             });
