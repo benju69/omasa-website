@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
+
     <title>Omasa - Your Personal Massage Routine Guide</title>
-    <meta name="description" content="Omasa is your personal guide to relaxation through massage routines. Available on iOS and Android. Learn self-massage techniques and improve your well-being.">
-    <meta name="keywords" content="massage, relaxation, self-care, wellness, massage app, iOS, Android, massage routines">
+    <meta name="description"
+        content="Omasa is your personal guide to relaxation through massage routines. Available on iOS and Android. Learn self-massage techniques and improve your well-being.">
+    <meta name="keywords"
+        content="massage, relaxation, self-care, wellness, massage app, iOS, Android, massage routines">
     <meta name="author" content="Benjamin Gonin">
     <meta name="theme-color" content="#6B4CE6">
-    
+
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://omasa.benju.fr/">
     <meta property="og:title" content="Omasa - Your Personal Massage Routine Guide">
-    <meta property="og:description" content="Discover guided massage routines for relaxation and well-being. Available on iOS and Android.">
+    <meta property="og:description"
+        content="Discover guided massage routines for relaxation and well-being. Available on iOS and Android.">
     <meta property="og:image" content="images/ic_launcher-playstore.png">
-    
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="@_benju_">
     <meta name="twitter:title" content="Omasa - Your Personal Massage Routine Guide">
     <meta name="twitter:description" content="Discover guided massage routines for relaxation and well-being.">
-    
+
     <!-- Favicons -->
     <link rel="icon" type="image/png" href="images/ic_launcher-playstore.png">
     <link rel="apple-touch-icon" href="images/ic_launcher-playstore.png">
-    
+
     <style>
         /* Local Quicksand Font */
         @font-face {
@@ -37,7 +41,7 @@
             font-style: normal;
             font-display: swap;
         }
-        
+
         @font-face {
             font-family: 'Quicksand';
             src: url('font/quicksand_regular.ttf') format('truetype');
@@ -45,7 +49,7 @@
             font-style: normal;
             font-display: swap;
         }
-        
+
         @font-face {
             font-family: 'Quicksand';
             src: url('font/quicksand_medium.ttf') format('truetype');
@@ -53,7 +57,7 @@
             font-style: normal;
             font-display: swap;
         }
-        
+
         @font-face {
             font-family: 'Quicksand';
             src: url('font/quicksand_semibold.ttf') format('truetype');
@@ -61,7 +65,7 @@
             font-style: normal;
             font-display: swap;
         }
-        
+
         @font-face {
             font-family: 'Quicksand';
             src: url('font/quicksand_semibold.ttf') format('truetype');
@@ -69,8 +73,9 @@
             font-style: normal;
             font-display: swap;
         }
+
         :root {
-            --primary-color: #6B4CE6;
+            --primary-color: #8472B9;
             --primary-dark: #5337CC;
             --primary-light: #8B6FF0;
             --secondary-color: #FF6B9D;
@@ -78,23 +83,23 @@
             --text-light: #666;
             --bg-light: #F8F9FA;
             --white: #FFFFFF;
-            --gradient: linear-gradient(135deg, #6B4CE6 0%, #8B6FF0 100%);
+            --gradient: linear-gradient(135deg, #8472B9 0%, #8B6FF0 100%);
             --gradient-alt: linear-gradient(135deg, #FF6B9D 0%, #FFA07A 100%);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--white);
         }
-        
+
         /* Header */
         header {
             background: var(--gradient);
@@ -102,13 +107,13 @@
             padding: 6rem 0 2rem 0;
             box-shadow: 0 4px 20px rgba(107, 76, 230, 0.15);
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
-        
+
         nav {
             display: flex;
             justify-content: space-between;
@@ -127,7 +132,7 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             z-index: 1000;
         }
-        
+
         .logo {
             font-family: 'Poppins', sans-serif;
             font-size: 2rem;
@@ -136,13 +141,13 @@
             text-decoration: none;
             letter-spacing: -0.5px;
         }
-        
+
         .nav-links {
             display: flex;
             gap: 2rem;
             list-style: none;
         }
-        
+
         .nav-links a {
             color: var(--primary-color);
             text-decoration: none;
@@ -152,17 +157,17 @@
             align-items: center;
             gap: 0.5rem;
         }
-        
+
         .nav-links a:hover {
             opacity: 0.8;
         }
-        
+
         /* Hero Section */
         .hero {
             text-align: center;
             padding: 4rem 0;
         }
-        
+
         .hero h1 {
             font-family: 'Quicksand', sans-serif;
             font-size: 3.5rem;
@@ -171,7 +176,7 @@
             line-height: 1.2;
             color: var(--white);
         }
-        
+
         .hero p {
             font-size: 1.5rem;
             margin-bottom: 3rem;
@@ -180,14 +185,14 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .cta-buttons {
             display: flex;
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
         }
-        
+
         .btn {
             display: inline-flex;
             align-items: center;
@@ -201,36 +206,36 @@
             border: none;
             font-size: 1rem;
         }
-        
+
         .btn-primary {
             background: var(--white);
             color: var(--primary-color);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
-        
+
         .btn-secondary {
             background: rgba(255, 255, 255, 0.2);
             color: var(--white);
             border: 2px solid var(--white);
             backdrop-filter: blur(10px);
         }
-        
+
         .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.3);
             transform: translateY(-2px);
         }
-        
+
         /* Features Section */
         .features {
             padding: 6rem 0;
             background: var(--bg-light);
         }
-        
+
         .section-title {
             font-family: 'Quicksand', sans-serif;
             font-size: 2.5rem;
@@ -239,14 +244,14 @@
             margin-bottom: 3rem;
             color: var(--text-dark);
         }
-        
+
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
             margin-top: 4rem;
         }
-        
+
         .feature-card {
             background: var(--white);
             padding: 2.5rem;
@@ -255,17 +260,17 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
         }
-        
+
         .feature-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
         }
-        
+
         .feature-icon {
             font-size: 3rem;
             margin-bottom: 1.5rem;
         }
-        
+
         .feature-card h3 {
             font-family: 'Quicksand', sans-serif;
             font-size: 1.5rem;
@@ -273,12 +278,12 @@
             margin-bottom: 1rem;
             color: var(--text-dark);
         }
-        
+
         .feature-card p {
             color: var(--text-light);
             line-height: 1.7;
         }
-        
+
         /* Download Section */
         .download {
             padding: 6rem 0;
@@ -286,67 +291,67 @@
             background: var(--gradient);
             color: var(--white);
         }
-        
+
         .download h2 {
             font-family: 'Quicksand', sans-serif;
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
         }
-        
+
         .download p {
             font-size: 1.2rem;
             margin-bottom: 3rem;
             opacity: 0.95;
         }
-        
+
         .app-badges {
             display: flex;
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
         }
-        
+
         .app-badge {
             display: inline-block;
             transition: transform 0.3s ease;
         }
-        
+
         .app-badge:hover {
             transform: scale(1.05);
         }
-        
+
         .app-badge img {
             height: 60px;
             width: auto;
         }
-        
+
         /* About Section */
         .about {
             padding: 6rem 0;
             background: var(--white);
         }
-        
+
         .about-content {
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
         }
-        
+
         .about-content p {
             font-size: 1.1rem;
             color: var(--text-light);
             line-height: 1.8;
             margin-bottom: 1.5rem;
         }
-        
+
         /* Contact Section */
         .contact {
             padding: 6rem 0;
             background: var(--bg-light);
             text-align: center;
         }
-        
+
         .contact-info {
             max-width: 600px;
             margin: 3rem auto 0;
@@ -355,7 +360,7 @@
             border-radius: 20px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
-        
+
         .contact-info a {
             color: var(--primary-color);
             text-decoration: none;
@@ -363,11 +368,11 @@
             font-size: 1.2rem;
             transition: color 0.3s ease;
         }
-        
+
         .contact-info a:hover {
             color: var(--primary-dark);
         }
-        
+
         /* Footer */
         footer {
             background: var(--text-dark);
@@ -375,7 +380,7 @@
             padding: 3rem 0;
             text-align: center;
         }
-        
+
         .footer-links {
             display: flex;
             gap: 2rem;
@@ -383,83 +388,83 @@
             list-style: none;
             margin-bottom: 1.5rem;
         }
-        
+
         .footer-links a {
             color: var(--white);
             text-decoration: none;
             opacity: 0.8;
             transition: opacity 0.3s ease;
         }
-        
+
         .footer-links a:hover {
             opacity: 1;
         }
-        
+
         /* Responsive Design */
         @media (max-width: 768px) {
             nav {
                 width: calc(100% - 2rem);
                 padding: 0.75rem 1rem;
             }
-            
+
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
+
             .hero p {
                 font-size: 1.2rem;
             }
-            
+
             .nav-links {
                 display: none;
             }
-            
+
             .features-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .section-title {
                 font-size: 2rem;
             }
-            
+
             .download h2 {
                 font-size: 2rem;
             }
-            
+
             .footer-links {
                 flex-direction: column;
                 gap: 1rem;
             }
         }
-        
+
         @media (max-width: 480px) {
             .container {
                 padding: 0 1rem;
             }
-            
+
             .hero {
                 padding: 2rem 0;
             }
-            
+
             .hero h1 {
                 font-size: 2rem;
             }
-            
+
             .hero p {
                 font-size: 1rem;
             }
-            
+
             .cta-buttons {
                 flex-direction: column;
                 gap: 1rem;
             }
-            
+
             .btn {
                 width: 100%;
                 justify-content: center;
             }
         }
-        
+
         /* Hero Illustration */
         .hero-illustration {
             margin-top: 3rem;
@@ -467,13 +472,13 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .hero-illustration img {
             width: 100%;
             height: auto;
             filter: drop-shadow(0 10px 30px rgba(107, 76, 230, 0.2));
         }
-        
+
         /* Logo with icon */
         .logo {
             font-family: 'Quicksand', sans-serif;
@@ -486,47 +491,48 @@
             align-items: center;
             gap: 0.5rem;
         }
-        
+
         .logo-icon {
             width: 40px;
             height: 40px;
             border-radius: 10px;
         }
-        
+
         @media (max-width: 768px) {
             .hero-illustration {
                 max-width: 300px;
             }
-            
+
             .logo-icon {
                 width: 32px;
                 height: 32px;
             }
         }
-        
+
         @media (max-width: 480px) {
             .hero-illustration {
                 max-width: 250px;
                 margin-top: 2rem;
             }
         }
-        
+
         /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
+
         .fade-in-up {
             animation: fadeInUp 0.6s ease-out;
         }
-        
+
         /* Accessibility */
         .visually-hidden {
             position: absolute;
@@ -539,23 +545,23 @@
             white-space: nowrap;
             border-width: 0;
         }
-        
+
         /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
-        
+
         /* FAQ Section */
         .faq {
             padding: 6rem 0;
             background: var(--white);
         }
-        
+
         .faq-container {
             max-width: 900px;
             margin: 0 auto;
         }
-        
+
         .faq-item {
             background: var(--white);
             border: 2px solid var(--bg-light);
@@ -564,12 +570,12 @@
             overflow: hidden;
             transition: all 0.3s ease;
         }
-        
+
         .faq-item:hover {
             border-color: var(--primary-light);
             box-shadow: 0 4px 15px rgba(107, 76, 230, 0.1);
         }
-        
+
         .faq-question {
             width: 100%;
             padding: 1.5rem 2rem;
@@ -586,11 +592,11 @@
             align-items: center;
             transition: background-color 0.3s ease;
         }
-        
+
         .faq-question:hover {
             background-color: var(--bg-light);
         }
-        
+
         .faq-question::after {
             content: '+';
             font-size: 1.5rem;
@@ -598,50 +604,51 @@
             font-weight: 700;
             transition: transform 0.3s ease;
         }
-        
+
         .faq-question.active::after {
             content: '−';
         }
-        
+
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease, padding 0.3s ease;
             padding: 0 2rem;
         }
-        
+
         .faq-answer.active {
             max-height: 1000px;
             padding: 0 2rem 1.5rem 2rem;
         }
-        
+
         .faq-answer p {
             color: var(--text-light);
             line-height: 1.8;
             margin-bottom: 1rem;
         }
-        
+
         .faq-answer p:last-child {
             margin-bottom: 0;
         }
-        
+
         @media (max-width: 768px) {
             .faq-question {
                 padding: 1.2rem 1.5rem;
                 font-size: 1rem;
             }
-            
+
             .faq-answer.active {
                 padding: 0 1.5rem 1.2rem 1.5rem;
             }
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="container">
             <nav>
-                <a href="/omasa/" class="logo">
+                <a href="#" class="logo">
                     <img src="images/ic_launcher-playstore.png" alt="Omasa Logo" class="logo-icon">
                     Omasa
                 </a>
@@ -652,10 +659,11 @@
                     <li><a href="#contact"><span>📧</span>Contact</a></li>
                 </ul>
             </nav>
-            
+
             <div class="hero">
                 <h1 class="fade-in-up">Your Personal Massage Guide</h1>
-                <p class="fade-in-up">Discover the art of self-massage with guided routines designed to relax, restore, and rejuvenate your body and mind.</p>
+                <p class="fade-in-up">Discover the art of self-massage with guided routines designed to relax, restore,
+                    and rejuvenate your body and mind.</p>
                 <div class="cta-buttons fade-in-up">
                     <a href="#download" class="btn btn-primary">
                         <span>📱</span>
@@ -666,49 +674,53 @@
                         Learn More
                     </a>
                 </div>
-                
+
                 <div class="hero-illustration fade-in-up">
                     <img src="images/omasa_hands.png" alt="Relaxing massage hands illustration">
                 </div>
             </div>
         </div>
     </header>
-    
+
     <section id="features" class="features">
         <div class="container">
             <h2 class="section-title">Why Choose Omasa?</h2>
-            
+
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🎯</div>
                     <h3>Guided Routines</h3>
-                    <p>Follow step-by-step massage routines designed by experts to target specific areas and address your unique needs.</p>
+                    <p>Follow step-by-step massage routines designed by experts to target specific areas and address
+                        your unique needs.</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">🎵</div>
                     <h3>Audio Guidance</h3>
-                    <p>Listen to soothing audio instructions that guide you through each massage technique at your own pace.</p>
+                    <p>Listen to soothing audio instructions that guide you through each massage technique at your own
+                        pace.</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">💆</div>
                     <h3>Self-Care Made Easy</h3>
-                    <p>Learn effective self-massage techniques to relieve tension, reduce stress, and improve overall well-being.</p>
+                    <p>Learn effective self-massage techniques to relieve tension, reduce stress, and improve overall
+                        well-being.</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">📅</div>
                     <h3>Flexible Scheduling</h3>
                     <p>Practice whenever and wherever suits you best - at home, in the office, or on the go.</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">🌟</div>
                     <h3>Multiple Techniques</h3>
-                    <p>Explore a variety of massage techniques from different traditions to find what works best for you.</p>
+                    <p>Explore a variety of massage techniques from different traditions to find what works best for
+                        you.</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-icon">📊</div>
                     <h3>Track Progress</h3>
@@ -717,45 +729,47 @@
             </div>
         </div>
     </section>
-    
+
     <section id="download" class="download">
         <div class="container">
             <h2>Get Omasa Today</h2>
             <p>Coming soon to iOS and Android. Start your journey to better self-care.</p>
-            
+
             <div class="app-badges">
                 <a href="#contact" class="app-badge" aria-label="Download on the App Store - Coming Soon">
-                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                        alt="Download on the App Store">
                 </a>
                 <a href="#contact" class="app-badge" aria-label="Get it on Google Play - Coming Soon">
-                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                        alt="Get it on Google Play">
                 </a>
             </div>
         </div>
     </section>
-    
+
     <section id="about" class="about">
         <div class="container">
             <h2 class="section-title">About Omasa</h2>
             <div class="about-content">
                 <p>
-                    Omasa is your personal companion for learning and practicing massage techniques. 
-                    Whether you're looking to relieve muscle tension, reduce stress, or simply take 
+                    Omasa is your personal companion for learning and practicing massage techniques.
+                    Whether you're looking to relieve muscle tension, reduce stress, or simply take
                     better care of yourself, Omasa provides expert guidance right at your fingertips.
                 </p>
                 <p>
-                    Our app combines ancient massage wisdom with modern technology to create an 
-                    accessible, easy-to-follow experience for everyone - from beginners to experienced 
+                    Our app combines ancient massage wisdom with modern technology to create an
+                    accessible, easy-to-follow experience for everyone - from beginners to experienced
                     practitioners.
                 </p>
                 <p>
-                    Join thousands of users who have discovered the power of self-massage and made 
+                    Join thousands of users who have discovered the power of self-massage and made
                     Omasa part of their daily wellness routine.
                 </p>
             </div>
         </div>
     </section>
-    
+
     <section id="faq" class="faq">
         <div class="container">
             <h2 class="section-title">Frequently Asked Questions</h2>
@@ -765,76 +779,91 @@
                         <span>What is Omasa?</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Omasa is a mobile application designed to guide you through self-massage routines. It provides step-by-step audio instructions and various massage techniques to help you relieve tension, reduce stress, and improve your overall well-being.</p>
+                        <p>Omasa is a mobile application designed to guide you through self-massage routines. It
+                            provides step-by-step audio instructions and various massage techniques to help you relieve
+                            tension, reduce stress, and improve your overall well-being.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
                         <span>Is Omasa suitable for beginners?</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Absolutely! Omasa is designed for everyone, from complete beginners to experienced practitioners. Our guided routines include clear instructions and are easy to follow, making it simple to start your self-massage journey.</p>
+                        <p>Absolutely! Omasa is designed for everyone, from complete beginners to experienced
+                            practitioners. Our guided routines include clear instructions and are easy to follow, making
+                            it simple to start your self-massage journey.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
                         <span>When will Omasa be available?</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Omasa is coming soon to both iOS and Android platforms. Sign up for updates by contacting us at omasa.contact@gmail.com to be notified when the app launches.</p>
+                        <p>Omasa is coming soon to both iOS and Android platforms. Sign up for updates by contacting us
+                            at omasa.contact@gmail.com to be notified when the app launches.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
                         <span>Do I need any special equipment?</span>
                     </button>
                     <div class="faq-answer">
-                        <p>No special equipment is required! All you need is your hands and a comfortable space. Some routines may suggest optional items like massage oils or a comfortable mat, but these are not necessary to get started.</p>
+                        <p>No special equipment is required! All you need is your hands and a comfortable space. Some
+                            routines may suggest optional items like massage oils or a comfortable mat, but these are
+                            not necessary to get started.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
                         <span>How long are the massage routines?</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Omasa offers a variety of routines with different durations to fit your schedule. Routines range from quick 5-minute sessions for busy days to more comprehensive 30-minute practices when you have more time to dedicate to self-care.</p>
+                        <p>Omasa offers a variety of routines with different durations to fit your schedule. Routines
+                            range from quick 5-minute sessions for busy days to more comprehensive 30-minute practices
+                            when you have more time to dedicate to self-care.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
                         <span>Will Omasa be free or paid?</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Pricing details will be announced closer to launch. We're committed to making self-care accessible to everyone, and we'll offer options that provide great value for users.</p>
+                        <p>Pricing details will be announced closer to launch. We're committed to making self-care
+                            accessible to everyone, and we'll offer options that provide great value for users.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
                         <span>Can I use Omasa offline?</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Yes! Once you download your favorite routines, you'll be able to access them offline, making it convenient to practice massage techniques wherever you are, even without an internet connection.</p>
+                        <p>Yes! Once you download your favorite routines, you'll be able to access them offline, making
+                            it convenient to practice massage techniques wherever you are, even without an internet
+                            connection.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
                         <span>Is Omasa a replacement for professional massage therapy?</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Omasa is a self-care tool designed to complement your wellness routine, but it's not a replacement for professional medical advice or treatment. If you have specific health concerns or conditions, please consult with a healthcare professional or licensed massage therapist.</p>
+                        <p>Omasa is a self-care tool designed to complement your wellness routine, but it's not a
+                            replacement for professional medical advice or treatment. If you have specific health
+                            concerns or conditions, please consult with a healthcare professional or licensed massage
+                            therapist.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Get in Touch</h2>
@@ -846,7 +875,7 @@
             </div>
         </div>
     </section>
-    
+
     <footer>
         <div class="container">
             <ul class="footer-links">
@@ -854,33 +883,34 @@
                 <li><a href="privacy-policy.html">Privacy Policy</a></li>
                 <li><a href="terms-of-use.html">Terms of Use</a></li>
             </ul>
-            <p>&copy; 2025 Omasa. Made with ❤️ by <a href="https://benju.fr" style="color: var(--white); text-decoration: none; opacity: 0.8;">Benjamin Gonin</a></p>
+            <p>&copy; 2025 Omasa. Made with ❤️ by <a href="https://benju.fr"
+                    style="color: var(--white); text-decoration: none; opacity: 0.8;">Benjamin Gonin</a></p>
         </div>
     </footer>
-    
+
     <script>
         // FAQ Accordion functionality
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const faqQuestions = document.querySelectorAll('.faq-question');
-            
+
             faqQuestions.forEach(question => {
-                question.addEventListener('click', function() {
+                question.addEventListener('click', function () {
                     const isActive = this.classList.contains('active');
                     const faqItem = this.closest('.faq-item');
                     const answer = faqItem ? faqItem.querySelector('.faq-answer') : null;
-                    
+
                     // Close all other FAQ items
                     faqQuestions.forEach(q => {
                         const otherFaqItem = q.closest('.faq-item');
                         const otherAnswer = otherFaqItem ? otherFaqItem.querySelector('.faq-answer') : null;
-                        
+
                         q.classList.remove('active');
                         q.setAttribute('aria-expanded', 'false');
                         if (otherAnswer) {
                             otherAnswer.classList.remove('active');
                         }
                     });
-                    
+
                     // Toggle current item
                     if (!isActive && answer) {
                         this.classList.add('active');
@@ -892,4 +922,5 @@
         });
     </script>
 </body>
+
 </html>
