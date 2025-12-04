@@ -524,6 +524,98 @@
         html {
             scroll-behavior: smooth;
         }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+        
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: var(--white);
+            border: 2px solid var(--bg-light);
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            border-color: var(--primary-light);
+            box-shadow: 0 4px 15px rgba(107, 76, 230, 0.1);
+        }
+        
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem 2rem;
+            background: var(--white);
+            border: none;
+            text-align: left;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background-color: var(--bg-light);
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-question.active::after {
+            content: '−';
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 2rem;
+        }
+        
+        .faq-answer.active {
+            max-height: 500px;
+            padding: 0 2rem 1.5rem 2rem;
+        }
+        
+        .faq-answer p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .faq-question {
+                padding: 1.2rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .faq-answer.active {
+                padding: 0 1.5rem 1.2rem 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -537,6 +629,7 @@
                 <ul class="nav-links">
                     <li><a href="#features">Features</a></li>
                     <li><a href="#download">Download</a></li>
+                    <li><a href="#faq">FAQ</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -644,6 +737,85 @@
         </div>
     </section>
     
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What is Omasa?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Omasa is a mobile application designed to guide you through self-massage routines. It provides step-by-step audio instructions and various massage techniques to help you relieve tension, reduce stress, and improve your overall well-being.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Is Omasa suitable for beginners?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! Omasa is designed for everyone, from complete beginners to experienced practitioners. Our guided routines include clear instructions and are easy to follow, making it simple to start your self-massage journey.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>When will Omasa be available?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Omasa is coming soon to both iOS and Android platforms. Sign up for updates by contacting us at omasa.contact@gmail.com to be notified when the app launches.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Do I need any special equipment?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No special equipment is required! All you need is your hands and a comfortable space. Some routines may suggest optional items like massage oils or a comfortable mat, but these are not necessary to get started.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How long are the massage routines?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Omasa offers a variety of routines with different durations to fit your schedule. Routines range from quick 5-minute sessions for busy days to more comprehensive 30-minute practices when you have more time to dedicate to self-care.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Will Omasa be free or paid?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Pricing details will be announced closer to launch. We're committed to making self-care accessible to everyone, and we'll offer options that provide great value for users.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Can I use Omasa offline?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! Once you download your favorite routines, you'll be able to access them offline, making it convenient to practice massage techniques wherever you are, even without an internet connection.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Is Omasa a replacement for professional massage therapy?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Omasa is a self-care tool designed to complement your wellness routine, but it's not a replacement for professional medical advice or treatment. If you have specific health concerns or conditions, please consult with a healthcare professional or licensed massage therapist.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Get in Touch</h2>
@@ -659,11 +831,39 @@
     <footer>
         <div class="container">
             <ul class="footer-links">
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="privacy-policy.html">Privacy Policy</a></li>
                 <li><a href="terms-of-use.html">Terms of Use</a></li>
             </ul>
             <p>&copy; 2025 Omasa. Made with ❤️ by <a href="https://benju.fr" style="color: var(--white); text-decoration: none; opacity: 0.8;">Benjamin Gonin</a></p>
         </div>
     </footer>
+    
+    <script>
+        // FAQ Accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const isActive = this.classList.contains('active');
+                    
+                    // Close all other FAQ items
+                    faqQuestions.forEach(q => {
+                        q.classList.remove('active');
+                        q.setAttribute('aria-expanded', 'false');
+                        q.nextElementSibling.classList.remove('active');
+                    });
+                    
+                    // Toggle current item
+                    if (!isActive) {
+                        this.classList.add('active');
+                        this.setAttribute('aria-expanded', 'true');
+                        this.nextElementSibling.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
