@@ -149,14 +149,11 @@
         }
 
         .nav-links a {
-            color: var(--primary-color);
             color: var(--text-dark);
             text-decoration: none;
-            font-weight: 500;
-            transition: opacity 0.3s ease;
             font-weight: 600;
             font-size: 1rem;
-            transition: var(--transition);
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -164,7 +161,6 @@
         }
 
         .nav-links a:hover {
-            opacity: 0.8;
             opacity: 1;
             color: var(--primary-color);
             transform: translateY(-1px);
@@ -538,8 +534,24 @@
             }
         }
 
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
         .fade-in-up {
             animation: fadeInUp 0.6s ease-out;
+        }
+
+        .float-animation {
+            animation: float 4s ease-in-out infinite;
         }
 
         /* Accessibility */
@@ -684,7 +696,7 @@
                     </a>
                 </div>
 
-                <div class="hero-illustration fade-in-up">
+                <div class="hero-illustration fade-in-up float-animation">
                     <img src="images/omasa_hands.png" alt="Relaxing massage hands illustration">
                 </div>
             </div>
