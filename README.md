@@ -3,8 +3,7 @@
 This directory contains the landing page for the Omasa massage routines app.
 
 ## Live Site
-- Current URL: https://benju.fr/omasa/ or https://www.benju.fr/omasa/
-- Planned subdomain: https://omasa.benju.fr (requires DNS configuration)
+- Current URL: https://omasa.benju.fr 
 
 ## Setting up the Subdomain (omasa.benju.fr)
 
