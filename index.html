@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html-root">
 
 <head>
     <meta charset="UTF-8">
@@ -164,6 +164,29 @@
             opacity: 1;
             color: var(--primary-color);
             transform: translateY(-1px);
+        }
+
+        .language-btn {
+            background: var(--primary-color);
+            border: none;
+            border-radius: 8px;
+            padding: 0.5rem 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 1.2rem;
+        }
+
+        .language-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(107, 76, 230, 0.3);
+        }
+
+        .language-flag {
+            font-size: 1.5rem;
+            line-height: 1;
         }
 
 
@@ -674,25 +697,30 @@
                     Omasa
                 </a>
                 <ul class="nav-links">
-                    <li><a href="#features"><span>✨</span>Features</a></li>
-                    <li><a href="#download"><span>📱</span>Download</a></li>
-                    <li><a href="#faq"><span>❓</span>FAQ</a></li>
-                    <li><a href="#contact"><span>📧</span>Contact</a></li>
+                    <li><a href="#features"><span>✨</span><span data-i18n="nav.features">Features</span></a></li>
+                    <li><a href="#download"><span>📱</span><span data-i18n="nav.download">Download</span></a></li>
+                    <li><a href="#faq"><span>❓</span><span data-i18n="nav.faq">FAQ</span></a></li>
+                    <li><a href="#contact"><span>📧</span><span data-i18n="nav.contact">Contact</span></a></li>
+                    <li>
+                        <button id="language-switcher" class="language-btn" aria-label="Switch language">
+                            <span class="language-flag">🇬🇧</span>
+                        </button>
+                    </li>
                 </ul>
             </nav>
 
             <div class="hero">
-                <h1 class="fade-in-up">Your Personal Massage Guide</h1>
-                <p class="fade-in-up">Discover the art of self-massage with guided routines designed to relax, restore,
+                <h1 class="fade-in-up" data-i18n="hero.title">Your Personal Massage Guide</h1>
+                <p class="fade-in-up" data-i18n="hero.subtitle">Discover the art of self-massage with guided routines designed to relax, restore,
                     and rejuvenate your body and mind.</p>
                 <div class="cta-buttons fade-in-up">
                     <a href="#download" class="btn btn-primary">
                         <span>📱</span>
-                        Download Now
+                        <span data-i18n="hero.downloadButton">Download Now</span>
                     </a>
                     <a href="#features" class="btn btn-secondary">
                         <span>✨</span>
-                        Learn More
+                        <span data-i18n="hero.learnMoreButton">Learn More</span>
                     </a>
                 </div>
 
@@ -705,47 +733,47 @@
 
     <section id="features" class="features">
         <div class="container">
-            <h2 class="section-title">Why Choose Omasa?</h2>
+            <h2 class="section-title" data-i18n="features.title">Why Choose Omasa?</h2>
 
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🎯</div>
-                    <h3>Guided Routines</h3>
-                    <p>Follow step-by-step massage routines designed by experts to target specific areas and address
+                    <h3 data-i18n="features.guidedRoutines.title">Guided Routines</h3>
+                    <p data-i18n="features.guidedRoutines.description">Follow step-by-step massage routines designed by experts to target specific areas and address
                         your unique needs.</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">🎵</div>
-                    <h3>Audio Guidance</h3>
-                    <p>Listen to soothing audio instructions that guide you through each massage technique at your own
+                    <h3 data-i18n="features.audioGuidance.title">Audio Guidance</h3>
+                    <p data-i18n="features.audioGuidance.description">Listen to soothing audio instructions that guide you through each massage technique at your own
                         pace.</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">💆</div>
-                    <h3>Self-Care Made Easy</h3>
-                    <p>Learn effective self-massage techniques to relieve tension, reduce stress, and improve overall
+                    <h3 data-i18n="features.selfCare.title">Self-Care Made Easy</h3>
+                    <p data-i18n="features.selfCare.description">Learn effective self-massage techniques to relieve tension, reduce stress, and improve overall
                         well-being.</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">📅</div>
-                    <h3>Flexible Scheduling</h3>
-                    <p>Practice whenever and wherever suits you best - at home, in the office, or on the go.</p>
+                    <h3 data-i18n="features.flexible.title">Flexible Scheduling</h3>
+                    <p data-i18n="features.flexible.description">Practice whenever and wherever suits you best - at home, in the office, or on the go.</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">🌟</div>
-                    <h3>Multiple Techniques</h3>
-                    <p>Explore a variety of massage techniques from different traditions to find what works best for
+                    <h3 data-i18n="features.techniques.title">Multiple Techniques</h3>
+                    <p data-i18n="features.techniques.description">Explore a variety of massage techniques from different traditions to find what works best for
                         you.</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">📊</div>
-                    <h3>Track Progress</h3>
-                    <p>Monitor your wellness journey and build healthy habits with our intuitive tracking features.</p>
+                    <h3 data-i18n="features.progress.title">Track Progress</h3>
+                    <p data-i18n="features.progress.description">Monitor your wellness journey and build healthy habits with our intuitive tracking features.</p>
                 </div>
             </div>
         </div>
@@ -753,8 +781,8 @@
 
     <section id="download" class="download">
         <div class="container">
-            <h2>Get Omasa Today</h2>
-            <p>Coming soon to iOS and Android. Start your journey to better self-care.</p>
+            <h2 data-i18n="download.title">Get Omasa Today</h2>
+            <p data-i18n="download.subtitle">Coming soon to iOS and Android. Start your journey to better self-care.</p>
 
             <div class="app-badges">
                 <a href="#contact" class="app-badge" aria-label="Download on the App Store - Coming Soon">
@@ -771,19 +799,19 @@
 
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Omasa</h2>
+            <h2 class="section-title" data-i18n="about.title">About Omasa</h2>
             <div class="about-content">
-                <p>
+                <p data-i18n="about.paragraph1">
                     Omasa is your personal companion for learning and practicing massage techniques.
                     Whether you're looking to relieve muscle tension, reduce stress, or simply take
                     better care of yourself, Omasa provides expert guidance right at your fingertips.
                 </p>
-                <p>
+                <p data-i18n="about.paragraph2">
                     Our app combines ancient massage wisdom with modern technology to create an
                     accessible, easy-to-follow experience for everyone - from beginners to experienced
                     practitioners.
                 </p>
-                <p>
+                <p data-i18n="about.paragraph3">
                     Join thousands of users who have discovered the power of self-massage and made
                     Omasa part of their daily wellness routine.
                 </p>
@@ -793,14 +821,14 @@
 
     <section id="faq" class="faq">
         <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
+            <h2 class="section-title" data-i18n="faq.title">Frequently Asked Questions</h2>
             <div class="faq-container">
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>What is Omasa?</span>
+                        <span data-i18n="faq.q1.question">What is Omasa?</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Omasa is a mobile application designed to guide you through self-massage routines. It
+                        <p data-i18n="faq.q1.answer">Omasa is a mobile application designed to guide you through self-massage routines. It
                             provides step-by-step audio instructions and various massage techniques to help you relieve
                             tension, reduce stress, and improve your overall well-being.</p>
                     </div>
@@ -808,10 +836,10 @@
 
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>Is Omasa suitable for beginners?</span>
+                        <span data-i18n="faq.q2.question">Is Omasa suitable for beginners?</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Absolutely! Omasa is designed for everyone, from complete beginners to experienced
+                        <p data-i18n="faq.q2.answer">Absolutely! Omasa is designed for everyone, from complete beginners to experienced
                             practitioners. Our guided routines include clear instructions and are easy to follow, making
                             it simple to start your self-massage journey.</p>
                     </div>
@@ -819,20 +847,20 @@
 
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>When will Omasa be available?</span>
+                        <span data-i18n="faq.q3.question">When will Omasa be available?</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Omasa is coming soon to both iOS and Android platforms. Sign up for updates by contacting us
+                        <p data-i18n="faq.q3.answer">Omasa is coming soon to both iOS and Android platforms. Sign up for updates by contacting us
                             at omasa.contact@gmail.com to be notified when the app launches.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>Do I need any special equipment?</span>
+                        <span data-i18n="faq.q4.question">Do I need any special equipment?</span>
                     </button>
                     <div class="faq-answer">
-                        <p>No special equipment is required! All you need is your hands and a comfortable space. Some
+                        <p data-i18n="faq.q4.answer">No special equipment is required! All you need is your hands and a comfortable space. Some
                             routines may suggest optional items like massage oils or a comfortable mat, but these are
                             not necessary to get started.</p>
                     </div>
@@ -840,10 +868,10 @@
 
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>How long are the massage routines?</span>
+                        <span data-i18n="faq.q5.question">How long are the massage routines?</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Omasa offers a variety of routines with different durations to fit your schedule. Routines
+                        <p data-i18n="faq.q5.answer">Omasa offers a variety of routines with different durations to fit your schedule. Routines
                             range from quick 5-minute sessions for busy days to more comprehensive 30-minute practices
                             when you have more time to dedicate to self-care.</p>
                     </div>
@@ -851,20 +879,20 @@
 
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>Will Omasa be free or paid?</span>
+                        <span data-i18n="faq.q6.question">Will Omasa be free or paid?</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Pricing details will be announced closer to launch. We're committed to making self-care
+                        <p data-i18n="faq.q6.answer">Pricing details will be announced closer to launch. We're committed to making self-care
                             accessible to everyone, and we'll offer options that provide great value for users.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>Can I use Omasa offline?</span>
+                        <span data-i18n="faq.q7.question">Can I use Omasa offline?</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Yes! Once you download your favorite routines, you'll be able to access them offline, making
+                        <p data-i18n="faq.q7.answer">Yes! Once you download your favorite routines, you'll be able to access them offline, making
                             it convenient to practice massage techniques wherever you are, even without an internet
                             connection.</p>
                     </div>
@@ -872,10 +900,10 @@
 
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>Is Omasa a replacement for professional massage therapy?</span>
+                        <span data-i18n="faq.q8.question">Is Omasa a replacement for professional massage therapy?</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Omasa is a self-care tool designed to complement your wellness routine, but it's not a
+                        <p data-i18n="faq.q8.answer">Omasa is a self-care tool designed to complement your wellness routine, but it's not a
                             replacement for professional medical advice or treatment. If you have specific health
                             concerns or conditions, please consult with a healthcare professional or licensed massage
                             therapist.</p>
@@ -887,9 +915,9 @@
 
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get in Touch</h2>
+            <h2 class="section-title" data-i18n="contact.title">Get in Touch</h2>
             <div class="contact-info">
-                <p>Have questions, feedback, or need support?</p>
+                <p data-i18n="contact.description">Have questions, feedback, or need support?</p>
                 <p style="margin-top: 1.5rem;">
                     <a href="mailto:omasa.contact@gmail.com">omasa.contact@gmail.com</a>
                 </p>
@@ -900,20 +928,257 @@
     <footer>
         <div class="container">
             <ul class="footer-links">
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                <li><a href="terms-of-use.html">Terms of Use</a></li>
+                <li><a href="#faq" data-i18n="footer.faq">FAQ</a></li>
+                <li><a href="privacy-policy.html" data-i18n="footer.privacy">Privacy Policy</a></li>
+                <li><a href="terms-of-use.html" data-i18n="footer.terms">Terms of Use</a></li>
             </ul>
-            <p>&copy; 2025 Omasa. Made with ❤️ by <a href="https://benju.fr"
+            <p data-i18n="footer.copyright">&copy; 2025 Omasa. Made with ❤️ by <a href="https://benju.fr"
                     style="color: var(--white); text-decoration: none; opacity: 0.8;">Benjamin Gonin</a></p>
         </div>
     </footer>
 
     <script>
+        // Translations
+        const translations = {
+            en: {
+                nav: {
+                    features: "Features",
+                    download: "Download",
+                    faq: "FAQ",
+                    contact: "Contact"
+                },
+                hero: {
+                    title: "Your Personal Massage Guide",
+                    subtitle: "Discover the art of self-massage with guided routines designed to relax, restore, and rejuvenate your body and mind.",
+                    downloadButton: "Download Now",
+                    learnMoreButton: "Learn More"
+                },
+                features: {
+                    title: "Why Choose Omasa?",
+                    guidedRoutines: {
+                        title: "Guided Routines",
+                        description: "Follow step-by-step massage routines designed by experts to target specific areas and address your unique needs."
+                    },
+                    audioGuidance: {
+                        title: "Audio Guidance",
+                        description: "Listen to soothing audio instructions that guide you through each massage technique at your own pace."
+                    },
+                    selfCare: {
+                        title: "Self-Care Made Easy",
+                        description: "Learn effective self-massage techniques to relieve tension, reduce stress, and improve overall well-being."
+                    },
+                    flexible: {
+                        title: "Flexible Scheduling",
+                        description: "Practice whenever and wherever suits you best - at home, in the office, or on the go."
+                    },
+                    techniques: {
+                        title: "Multiple Techniques",
+                        description: "Explore a variety of massage techniques from different traditions to find what works best for you."
+                    },
+                    progress: {
+                        title: "Track Progress",
+                        description: "Monitor your wellness journey and build healthy habits with our intuitive tracking features."
+                    }
+                },
+                download: {
+                    title: "Get Omasa Today",
+                    subtitle: "Coming soon to iOS and Android. Start your journey to better self-care."
+                },
+                about: {
+                    title: "About Omasa",
+                    paragraph1: "Omasa is your personal companion for learning and practicing massage techniques. Whether you're looking to relieve muscle tension, reduce stress, or simply take better care of yourself, Omasa provides expert guidance right at your fingertips.",
+                    paragraph2: "Our app combines ancient massage wisdom with modern technology to create an accessible, easy-to-follow experience for everyone - from beginners to experienced practitioners.",
+                    paragraph3: "Join thousands of users who have discovered the power of self-massage and made Omasa part of their daily wellness routine."
+                },
+                faq: {
+                    title: "Frequently Asked Questions",
+                    q1: {
+                        question: "What is Omasa?",
+                        answer: "Omasa is a mobile application designed to guide you through self-massage routines. It provides step-by-step audio instructions and various massage techniques to help you relieve tension, reduce stress, and improve your overall well-being."
+                    },
+                    q2: {
+                        question: "Is Omasa suitable for beginners?",
+                        answer: "Absolutely! Omasa is designed for everyone, from complete beginners to experienced practitioners. Our guided routines include clear instructions and are easy to follow, making it simple to start your self-massage journey."
+                    },
+                    q3: {
+                        question: "When will Omasa be available?",
+                        answer: "Omasa is coming soon to both iOS and Android platforms. Sign up for updates by contacting us at omasa.contact@gmail.com to be notified when the app launches."
+                    },
+                    q4: {
+                        question: "Do I need any special equipment?",
+                        answer: "No special equipment is required! All you need is your hands and a comfortable space. Some routines may suggest optional items like massage oils or a comfortable mat, but these are not necessary to get started."
+                    },
+                    q5: {
+                        question: "How long are the massage routines?",
+                        answer: "Omasa offers a variety of routines with different durations to fit your schedule. Routines range from quick 5-minute sessions for busy days to more comprehensive 30-minute practices when you have more time to dedicate to self-care."
+                    },
+                    q6: {
+                        question: "Will Omasa be free or paid?",
+                        answer: "Pricing details will be announced closer to launch. We're committed to making self-care accessible to everyone, and we'll offer options that provide great value for users."
+                    },
+                    q7: {
+                        question: "Can I use Omasa offline?",
+                        answer: "Yes! Once you download your favorite routines, you'll be able to access them offline, making it convenient to practice massage techniques wherever you are, even without an internet connection."
+                    },
+                    q8: {
+                        question: "Is Omasa a replacement for professional massage therapy?",
+                        answer: "Omasa is a self-care tool designed to complement your wellness routine, but it's not a replacement for professional medical advice or treatment. If you have specific health concerns or conditions, please consult with a healthcare professional or licensed massage therapist."
+                    }
+                },
+                contact: {
+                    title: "Get in Touch",
+                    description: "Have questions, feedback, or need support?"
+                },
+                footer: {
+                    faq: "FAQ",
+                    privacy: "Privacy Policy",
+                    terms: "Terms of Use",
+                    copyright: "&copy; 2025 Omasa. Made with ❤️ by <a href=\"https://benju.fr\" style=\"color: var(--white); text-decoration: none; opacity: 0.8;\">Benjamin Gonin</a>"
+                }
+            },
+            fr: {
+                nav: {
+                    features: "Fonctionnalités",
+                    download: "Télécharger",
+                    faq: "FAQ",
+                    contact: "Contact"
+                },
+                hero: {
+                    title: "Votre Guide Personnel de Massage",
+                    subtitle: "Découvrez l'art de l'auto-massage avec des routines guidées conçues pour détendre, restaurer et revitaliser votre corps et votre esprit.",
+                    downloadButton: "Télécharger Maintenant",
+                    learnMoreButton: "En Savoir Plus"
+                },
+                features: {
+                    title: "Pourquoi Choisir Omasa ?",
+                    guidedRoutines: {
+                        title: "Routines Guidées",
+                        description: "Suivez des routines de massage étape par étape conçues par des experts pour cibler des zones spécifiques et répondre à vos besoins uniques."
+                    },
+                    audioGuidance: {
+                        title: "Guidance Audio",
+                        description: "Écoutez des instructions audio apaisantes qui vous guident à travers chaque technique de massage à votre propre rythme."
+                    },
+                    selfCare: {
+                        title: "Soins Personnels Facilités",
+                        description: "Apprenez des techniques d'auto-massage efficaces pour soulager les tensions, réduire le stress et améliorer votre bien-être général."
+                    },
+                    flexible: {
+                        title: "Horaires Flexibles",
+                        description: "Pratiquez quand et où cela vous convient le mieux - à la maison, au bureau ou en déplacement."
+                    },
+                    techniques: {
+                        title: "Techniques Multiples",
+                        description: "Explorez une variété de techniques de massage issues de différentes traditions pour trouver ce qui vous convient le mieux."
+                    },
+                    progress: {
+                        title: "Suivez vos Progrès",
+                        description: "Suivez votre parcours bien-être et développez des habitudes saines avec nos fonctionnalités de suivi intuitives."
+                    }
+                },
+                download: {
+                    title: "Obtenez Omasa Aujourd'hui",
+                    subtitle: "Bientôt disponible sur iOS et Android. Commencez votre voyage vers de meilleurs soins personnels."
+                },
+                about: {
+                    title: "À Propos d'Omasa",
+                    paragraph1: "Omasa est votre compagnon personnel pour apprendre et pratiquer les techniques de massage. Que vous cherchiez à soulager les tensions musculaires, réduire le stress ou simplement prendre mieux soin de vous, Omasa vous offre des conseils d'experts à portée de main.",
+                    paragraph2: "Notre application combine la sagesse ancestrale du massage avec la technologie moderne pour créer une expérience accessible et facile à suivre pour tous - des débutants aux praticiens expérimentés.",
+                    paragraph3: "Rejoignez des milliers d'utilisateurs qui ont découvert le pouvoir de l'auto-massage et ont fait d'Omasa une partie de leur routine quotidienne de bien-être."
+                },
+                faq: {
+                    title: "Questions Fréquemment Posées",
+                    q1: {
+                        question: "Qu'est-ce qu'Omasa ?",
+                        answer: "Omasa est une application mobile conçue pour vous guider à travers des routines d'auto-massage. Elle fournit des instructions audio étape par étape et diverses techniques de massage pour vous aider à soulager les tensions, réduire le stress et améliorer votre bien-être général."
+                    },
+                    q2: {
+                        question: "Omasa convient-il aux débutants ?",
+                        answer: "Absolument ! Omasa est conçu pour tout le monde, des débutants complets aux praticiens expérimentés. Nos routines guidées incluent des instructions claires et sont faciles à suivre, ce qui rend simple le début de votre voyage d'auto-massage."
+                    },
+                    q3: {
+                        question: "Quand Omasa sera-t-il disponible ?",
+                        answer: "Omasa arrive bientôt sur les plateformes iOS et Android. Inscrivez-vous pour recevoir des mises à jour en nous contactant à omasa.contact@gmail.com pour être averti lors du lancement de l'application."
+                    },
+                    q4: {
+                        question: "Ai-je besoin d'équipement spécial ?",
+                        answer: "Aucun équipement spécial n'est requis ! Tout ce dont vous avez besoin, ce sont vos mains et un espace confortable. Certaines routines peuvent suggérer des articles optionnels comme des huiles de massage ou un tapis confortable, mais ceux-ci ne sont pas nécessaires pour commencer."
+                    },
+                    q5: {
+                        question: "Quelle est la durée des routines de massage ?",
+                        answer: "Omasa propose une variété de routines avec différentes durées pour s'adapter à votre emploi du temps. Les routines vont de sessions rapides de 5 minutes pour les journées chargées à des pratiques plus complètes de 30 minutes lorsque vous avez plus de temps à consacrer aux soins personnels."
+                    },
+                    q6: {
+                        question: "Omasa sera-t-il gratuit ou payant ?",
+                        answer: "Les détails des tarifs seront annoncés plus près du lancement. Nous nous engageons à rendre les soins personnels accessibles à tous, et nous offrirons des options qui apportent une grande valeur aux utilisateurs."
+                    },
+                    q7: {
+                        question: "Puis-je utiliser Omasa hors ligne ?",
+                        answer: "Oui ! Une fois que vous avez téléchargé vos routines préférées, vous pourrez y accéder hors ligne, ce qui rend pratique la pratique des techniques de massage où que vous soyez, même sans connexion Internet."
+                    },
+                    q8: {
+                        question: "Omasa est-il un remplacement de la massothérapie professionnelle ?",
+                        answer: "Omasa est un outil de soins personnels conçu pour compléter votre routine de bien-être, mais ce n'est pas un remplacement pour des conseils médicaux professionnels ou un traitement. Si vous avez des préoccupations ou des conditions de santé spécifiques, veuillez consulter un professionnel de la santé ou un massothérapeute agréé."
+                    }
+                },
+                contact: {
+                    title: "Contactez-nous",
+                    description: "Avez-vous des questions, des commentaires ou besoin d'assistance ?"
+                },
+                footer: {
+                    faq: "FAQ",
+                    privacy: "Politique de Confidentialité",
+                    terms: "Conditions d'Utilisation",
+                    copyright: "&copy; 2025 Omasa. Fait avec ❤️ par <a href=\"https://benju.fr\" style=\"color: var(--white); text-decoration: none; opacity: 0.8;\">Benjamin Gonin</a>"
+                }
+            }
+        };
+
+        // i18n functionality
+        let currentLanguage = localStorage.getItem('language') || 'en';
+
+        function getNestedTranslation(obj, path) {
+            return path.split('.').reduce((current, key) => current?.[key], obj);
+        }
+
+        function updatePageLanguage() {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                const translation = getNestedTranslation(translations[currentLanguage], key);
+                if (translation) {
+                    element.innerHTML = translation;
+                }
+            });
+
+            // Update language switcher button
+            const languageBtn = document.querySelector('#language-switcher .language-flag');
+            if (languageBtn) {
+                languageBtn.textContent = currentLanguage === 'en' ? '🇬🇧' : '🇫🇷';
+            }
+
+            // Update HTML lang attribute
+            document.documentElement.setAttribute('lang', currentLanguage);
+        }
+
+        function switchLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'fr' : 'en';
+            localStorage.setItem('language', currentLanguage);
+            updatePageLanguage();
+        }
+
         // FAQ Accordion functionality
         document.addEventListener('DOMContentLoaded', function () {
-            const faqQuestions = document.querySelectorAll('.faq-question');
+            // Initialize language
+            updatePageLanguage();
 
+            // Language switcher
+            const languageSwitcher = document.getElementById('language-switcher');
+            if (languageSwitcher) {
+                languageSwitcher.addEventListener('click', switchLanguage);
+            }
+
+            // FAQ Accordion
+            const faqQuestions = document.querySelectorAll('.faq-question');
             faqQuestions.forEach(question => {
                 question.addEventListener('click', function () {
                     const isActive = this.classList.contains('active');
