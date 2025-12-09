@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="html-root">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -235,6 +235,7 @@
             </p>
         </div>
     </div>
+    <script src="i18n.js"></script>
     <script>
         // Translations
         const translations = {
@@ -264,52 +265,8 @@
             }
         };
 
-        // i18n functionality
-        let currentLanguage = localStorage.getItem('language') || 'en';
-
-        function getNestedTranslation(obj, path) {
-            return path.split('.').reduce((current, key) => current?.[key], obj);
-        }
-
-        function updatePageLanguage() {
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                const translation = getNestedTranslation(translations[currentLanguage], key);
-                if (translation) {
-                    if (element.tagName === 'TITLE') {
-                        element.textContent = translation;
-                    } else {
-                        element.innerHTML = translation;
-                    }
-                }
-            });
-
-            // Update language switcher button
-            const languageBtn = document.querySelector('#language-switcher .language-flag');
-            if (languageBtn) {
-                languageBtn.textContent = currentLanguage === 'en' ? '🇬🇧' : '🇫🇷';
-            }
-
-            // Update HTML lang attribute
-            document.documentElement.setAttribute('lang', currentLanguage);
-        }
-
-        function switchLanguage() {
-            currentLanguage = currentLanguage === 'en' ? 'fr' : 'en';
-            localStorage.setItem('language', currentLanguage);
-            updatePageLanguage();
-        }
-
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', function () {
-            updatePageLanguage();
-
-            // Language switcher
-            const languageSwitcher = document.getElementById('language-switcher');
-            if (languageSwitcher) {
-                languageSwitcher.addEventListener('click', switchLanguage);
-            }
-        });
+        // Initialize i18n with translations
+        initializeI18n(translations);
     </script>
 </body>
 </html>
