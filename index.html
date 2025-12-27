@@ -328,7 +328,8 @@
 
         .app-badge img {
             height: 60px;
-            width: auto;
+            width: 180px;
+            object-fit: contain;
         }
 
         /* About Section */
@@ -757,11 +758,11 @@
             <p>Coming soon to iOS and Android. Start your journey to better self-care.</p>
 
             <div class="app-badges">
-                <a href="#contact" class="app-badge" aria-label="Download on the App Store - Coming Soon">
+                <a href="#" class="app-badge app-store-badge" aria-label="Download on the App Store - Coming Soon">
                     <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
                         alt="Download on the App Store">
                 </a>
-                <a href="#contact" class="app-badge" aria-label="Get it on Google Play - Coming Soon">
+                <a href="https://play.google.com/store/apps/details?id=fr.benju.omasa" class="app-badge" aria-label="Get it on Google Play" target="_blank" rel="noopener noreferrer">
                     <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
                         alt="Get it on Google Play">
                 </a>
@@ -940,6 +941,15 @@
                     }
                 });
             });
+
+            // App Store badge "soon" message
+            const appStoreBadge = document.querySelector('.app-store-badge');
+            if (appStoreBadge) {
+                appStoreBadge.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    alert('Coming soon to the App Store!');
+                });
+            }
         });
     </script>
 </body>
