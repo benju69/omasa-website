@@ -758,7 +758,7 @@
             <p>Coming soon to iOS and Android. Start your journey to better self-care.</p>
 
             <div class="app-badges">
-                <a href="#" class="app-badge app-store-badge" aria-label="Download on the App Store - Coming Soon">
+                <a href="#" class="app-badge app-store-badge" aria-label="Coming soon to the App Store">
                     <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
                         alt="Download on the App Store">
                 </a>
@@ -942,12 +942,60 @@
                 });
             });
 
+            // Simple toast-style notification for "coming soon" message
+            let appStoreNotification = document.getElementById('app-store-notification');
+            let appStoreNotificationTimeoutId = null;
+
+            if (!appStoreNotification) {
+                appStoreNotification = document.createElement('div');
+                appStoreNotification.id = 'app-store-notification';
+                appStoreNotification.setAttribute('role', 'status');
+                appStoreNotification.setAttribute('aria-live', 'polite');
+                appStoreNotification.setAttribute('aria-atomic', 'true');
+                appStoreNotification.style.position = 'fixed';
+                appStoreNotification.style.left = '50%';
+                appStoreNotification.style.bottom = '1.5rem';
+                appStoreNotification.style.transform = 'translateX(-50%)';
+                appStoreNotification.style.backgroundColor = 'rgba(0, 0, 0, 0.85)';
+                appStoreNotification.style.color = '#ffffff';
+                appStoreNotification.style.padding = '0.75rem 1.25rem';
+                appStoreNotification.style.borderRadius = '999px';
+                appStoreNotification.style.fontSize = '0.9rem';
+                appStoreNotification.style.zIndex = '9999';
+                appStoreNotification.style.opacity = '0';
+                appStoreNotification.style.visibility = 'hidden';
+                appStoreNotification.style.transition = 'opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, transform 0.2s ease-in-out';
+                appStoreNotification.style.pointerEvents = 'none';
+                document.body.appendChild(appStoreNotification);
+            }
+
+            function showAppStoreNotification(message) {
+                if (!appStoreNotification) {
+                    return;
+                }
+
+                appStoreNotification.textContent = message;
+                appStoreNotification.style.visibility = 'visible';
+                appStoreNotification.style.opacity = '1';
+                appStoreNotification.style.transform = 'translateX(-50%) translateY(0)';
+
+                if (appStoreNotificationTimeoutId !== null) {
+                    clearTimeout(appStoreNotificationTimeoutId);
+                }
+
+                appStoreNotificationTimeoutId = setTimeout(function () {
+                    appStoreNotification.style.opacity = '0';
+                    appStoreNotification.style.visibility = 'hidden';
+                    appStoreNotification.style.transform = 'translateX(-50%) translateY(0.5rem)';
+                }, 3000);
+            }
+
             // App Store badge "soon" message
             const appStoreBadge = document.querySelector('.app-store-badge');
             if (appStoreBadge) {
                 appStoreBadge.addEventListener('click', function (e) {
                     e.preventDefault();
-                    alert('Coming soon to the App Store!');
+                    showAppStoreNotification('Coming soon to the App Store!');
                 });
             }
         });
